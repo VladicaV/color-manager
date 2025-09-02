@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useColors } from './ColorContext';
+import { ReactComponent as CopyIcon } from "../icons/copy.svg";
+import { ReactComponent as DeleteIcon } from "../icons/delete.svg";
 
 const ColorItem = ({ color }) => {
   const { deleteColor } = useColors();
@@ -73,10 +75,7 @@ const ColorItem = ({ color }) => {
             title="Copy hex value"
             style={{ fontSize: '16px', width: '40px', height: '40px' }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H8" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 2H9C7.89543 2 7 2.89543 7 4V16C7 17.1046 7.89543 18 9 18H15C16.1046 18 17 17.1046 17 16V4C17 2.89543 16.1046 2 15 2Z" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <CopyIcon/>
           </button>
         </div>
       </div>
@@ -102,10 +101,7 @@ const ColorItem = ({ color }) => {
         {isDeleting ? (
           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" style={{ height: '16px', width: '16px' }}></div>
         ) : (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 6H5H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+          <DeleteIcon/>
         )}
       </button>
     </div>
